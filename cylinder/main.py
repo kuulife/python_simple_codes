@@ -6,11 +6,11 @@ class Cylinder:
 
         
     def volume(self):
-        return self.pi*((self.radius)**2)*self.height
+        return f'volume of cylinder is: {self.pi*((self.radius)**2)*self.height}'
     
     def surface_area(self):
-        return (2*self.pi*self.radius)*(self.radius + self.height)
+        return f'surface are of cylinder is: {(2*self.pi*self.radius)*(self.radius + self.height)}'
 
 c = Cylinder(2,3)
-print(f'volume of cylinder is: {c.volume()}')
-print(f'surface are of cylinder is: {c.surface_area()}')
+print(c.volume())
+print(c.surface_area())
