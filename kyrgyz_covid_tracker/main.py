@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
+count = ''
 
+#request to the website
 res = requests.get('https://covid.kg/ru')
 soup = BeautifulSoup(res.text, 'lxml')
 
@@ -13,6 +15,8 @@ data_title_recovered = soup.select('.data-title')[1].text.strip()
 data_death = soup.select('.data-death')[0].text.strip()
 data_title_death = soup.select('.data-title')[2].text.strip()
 
+count  = count + str(covid_cases)
+
 print(data_name)
 print(data_info+'\n')
 
@@ -20,3 +24,4 @@ print(f'{data_title}: {covid_cases}')
 print(f'{data_title_recovered}: {data_recovered}')
 print(f'{data_title_death}: {data_death}')
 print('\n')
+print(f'all disease from 9 november: {count}')
